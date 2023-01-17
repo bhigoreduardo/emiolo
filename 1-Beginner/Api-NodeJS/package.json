@@ -1,0 +1,22 @@
+{
+  "name": "api-nodejs",
+  "version": "1.0.0",
+  "description": "- Git (`git -v`)\r - NodeJs (`node --version`/`npm --version`)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhigoreduardo/emiolo.git"
+  },
+  "author": "bhigoreduardo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bhigoreduardo/emiolo/issues"
+  },
+  "homepage": "https://github.com/bhigoreduardo/emiolo#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
