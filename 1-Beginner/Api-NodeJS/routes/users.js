@@ -3,12 +3,15 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
+const config = require("../config/config");
 
 const router = express.Router();
 
 function createUserToken(userId) {
-  const SECRET = process.env.SECRET;
-  return jwt.sign({ id: userId }, SECRET, { expiresIn: "7d" });
+  // const SECRET = process.env.SECRET;
+  const SECRET = config.SECRET;
+  const TOKEN_EXPIRE = config.TOKEN_EXPIRE;
+  return jwt.sign({ id: userId }, SECRET, { expiresIn: TOKEN_EXPIRE });
 }
 
 router.get("/", async (req, res) => {

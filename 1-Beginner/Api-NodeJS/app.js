@@ -2,9 +2,11 @@ require("dotenv").config({ path: ".env.local" });
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const config = require("./config/config");
 
 // MONGOOSE
-const url = process.env.DB_URL;
+// const url = process.env.DB_URL;
+const url = config.DB_URL;
 mongoose.connect(url);
 
 mongoose.connection.on("error", (err) => {

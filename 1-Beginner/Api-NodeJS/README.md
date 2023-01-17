@@ -8,9 +8,11 @@
 
 - Server (porta 3000): `node app.js`
 
-## ⚙️ Configurações `.env.local`:
+## ⚙️ Configurações `.env.local` ou `config.js`:
 
 - DB_URL: Url do MongoDb Atlas com usuário e senha
+- SECRET: Senha secreta da aplicação
+- TOKEN_EXPIRE: Tempo de expiração do token
 
 ## 😬 Instalações necessárias:
 
@@ -128,6 +130,15 @@
     500 - Internal Server Error
     501 - Not  Implemented
     503 - Service Unavailable
+    ```
+
+- **Variable Environment:** Muito útil para informações que se alteram no contexto do ambiente da execução da aplicação.
+
+  - ###### Code:
+
+    ```
+    set NODE_ENV=prod (Windows)
+    export NODE_ENV=prod (Linux)
     ```
 
       </details>
