@@ -2,7 +2,9 @@
   💻<br>Fundamentos TypeScript
 </h1>
 
-✅ TypesCript
+<img src="src/images/cover.png" alt="Cover projeto" />
+
+✅ TypeScript
 
 ## 🔥 Rodar Aplicação:
 
