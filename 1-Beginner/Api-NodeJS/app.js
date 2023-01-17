@@ -1,11 +1,11 @@
 const express = require("express");
 const app = express();
 
-app.get("/", (req, res) => {
-  const { name, lastName } = req.query;
+const indexRoute = require("./routes/index");
+const usersRoute = require("./routes/users");
 
-  return res.send({ message: `Nome: ${name} - Sobrenome: ${lastName}` });
-});
+app.use("/", indexRoute);
+app.use("/users", usersRoute);
 
 app.listen(3000);
 module.exports = app;
