@@ -8,6 +8,9 @@
 
 - Server (porta 3000): `node app.js`
 
+## ⚙️ Configurações `.env.local`:
+- DB_URL: Url do MongoDb Atlas com usuário e senha
+
 ## 😬 Instalações necessárias:
 
 - Git (`git -v`)
@@ -19,7 +22,7 @@
 
 ## 👶 Dependências:
 
-- `npm install express --save`
+- `npm install express --save mongoose --save body-parser --save dotenv --save`
 
 ## 📋 Documentação:
 
