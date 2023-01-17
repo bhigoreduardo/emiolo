@@ -111,4 +111,23 @@
     module.exports = mongoose.model("User", UserSchema);
     ```
 
+- **Status Code:** Código de resposta do server para auxiliar quem estiver consumindo API.
+
+  - ###### Code:
+
+    ```
+    200 - OK
+    201 - Created
+    202 - Accepted
+
+    400 - Bad Request
+    401 - Unauthorization - AUTENTICAÇÃO, caráter temporário.
+    403 - Forbiden - AUTORIZAÇÃO, caráter permanente.
+    404 - Not found
+
+    500 - Internal Server Error
+    501 - Not  Implemented
+    503 - Service Unavailable
+    ```
+
       </details>
