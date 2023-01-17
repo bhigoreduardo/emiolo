@@ -8,7 +8,7 @@
 
 ## 🔥 Rodar Aplicação:
 
-- Liver Server (porta 5050)
+- Liver Server (porta 5500)
 
 ## 📚 Conhecimento prévio:
 
