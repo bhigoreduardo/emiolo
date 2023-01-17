@@ -1,0 +1,59 @@
+/* VARS */
+@import "./_vars.css";
+
+/* BASE */
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html,
+body {
+  font-family: var(--font-family);
+  font-size: 62.5%;
+  font-weight: var(--font-weight-regular);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+::selection {
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input[type="submit"],
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+select,
+textarea,
+input {
+  font-family: inherit;
+  border: none;
+  resize: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
