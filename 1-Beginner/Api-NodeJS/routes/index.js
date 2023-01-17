@@ -1,9 +1,11 @@
 const expres = require("express");
+const auth = require("../middlewares/auth");
 
 const router = expres.Router();
 
-router.get("/", (req, res) => {
-  return res.send({ message: "GET index.js" });
+router.get("/", auth, (req, res) => {
+  console.log(res.locals.userAuth);
+  return res.send({ message: "Protected GET index.js" });
 });
 
 router.post("/", (req, res) => {

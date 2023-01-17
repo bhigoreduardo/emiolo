@@ -1,8 +1,15 @@
+require("dotenv").config({ path: ".env.local" });
 const express = require("express");
 const bcrypt = require("bcrypt");
 const User = require("../models/user");
+const jwt = require("jsonwebtoken");
 
 const router = express.Router();
+
+function createUserToken(userId) {
+  const SECRET = process.env.SECRET;
+  return jwt.sign({ id: userId }, SECRET, { expiresIn: "7d" });
+}
 
 router.get("/", async (req, res) => {
   try {
@@ -27,7 +34,7 @@ router.post("/", async (req, res) => {
 
     const user = await User.create(req.body);
     user.password = undefined;
-    return res.send(user);
+    return res.send({ user, token: createUserToken(user._id) });
   } catch (err) {
     return res.send({ error: "Server error" });
   }
@@ -50,7 +57,7 @@ router.post("/auth", async (req, res) => {
     }
 
     user.password = undefined;
-    return res.send(user);
+    return res.send({ user, token: createUserToken(user._id) });
   } catch (err) {
     return res.send({ error: "Server error" });
   }
