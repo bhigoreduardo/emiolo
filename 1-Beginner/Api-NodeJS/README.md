@@ -9,6 +9,7 @@
 - Server (porta 3000): `node app.js`
 
 ## ⚙️ Configurações `.env.local`:
+
 - DB_URL: Url do MongoDb Atlas com usuário e senha
 
 ## 😬 Instalações necessárias:
@@ -62,4 +63,23 @@
     module.exports = app;
     ```
 
-</details>
+- **MondoDB:** A conexão com banco só precisa das credenciais de acesso e o servidor do banco de dados.
+
+  - ###### Code:
+
+    ```
+    const url = process.env.DB_URL;
+    mongoose.connect(url);
+
+    mongoose.connection.on("error", (err) => {
+      console.log(`There was an error connecting to the database: ${err}`);
+    });
+    mongoose.connection.on("disconnect", () => {
+      console.log("Database connection dropped");
+    });
+    mongoose.connection.on("connected", () => {
+      console.log("Successful database connection");
+    });
+    ```
+
+    </details>

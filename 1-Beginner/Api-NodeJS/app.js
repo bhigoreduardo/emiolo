@@ -7,6 +7,16 @@ const bodyParser = require("body-parser");
 const url = process.env.DB_URL;
 mongoose.connect(url);
 
+mongoose.connection.on("error", (err) => {
+  console.log(`There was an error connecting to the database: ${err}`);
+});
+mongoose.connection.on("disconnect", () => {
+  console.log("Database connection dropped");
+});
+mongoose.connection.on("connected", () => {
+  console.log("Successful database connection");
+});
+
 const app = express();
 
 // BODY PARSER
