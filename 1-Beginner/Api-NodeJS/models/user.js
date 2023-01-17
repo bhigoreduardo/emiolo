@@ -15,10 +15,8 @@ UserSchema.pre("save", async function (next) {
   }
 
   const salt = 10;
-  bcrypt.hash(this.password, salt, (err, encrypted) => {
-    this.password = encrypted;
-    return next();
-  });
+  this.password = await bcrypt.hash(this.password, salt);
+  return next();
 });
 
 module.exports = mongoose.model("User", UserSchema);
